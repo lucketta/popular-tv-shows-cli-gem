@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PopularTvShows
 
 Welcome to the Popular TV Shows Cli Gem. This gem lists 49 Popular TV Shows, according to TV Guide. Choosing a show from the list allows you to get more information about the show: original airdate, rating, summary, main actors, and if the show is currently airing episodes. If so, the next air date and network are displayed.
@@ -36,3 +37,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/lucket
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+=======
+# popular-tv-shows-cli-gem
+>>>>>>> be22547283da8d93527763b2e89a3171211f3d25
