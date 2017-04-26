@@ -35,7 +35,7 @@ class PopularTvShows::CLI
         print_show_profile(input.to_i - 1)
       elsif input == "list"
         list_shows
-      else
+      elsif input != "exit"
         puts "Invalid entry. Type list or exit"
       end
     end
