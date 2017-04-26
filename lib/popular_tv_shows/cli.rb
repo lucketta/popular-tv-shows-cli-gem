@@ -1,9 +1,13 @@
 class PopularTvShows::CLI
 
+  #Start of GEM
   def call
 
+    #Starts scraping process from TV Guide
     PopularTvShows::Scraper.new.make_tv_shows
+
     puts "Welcome to the Most Popular TV Shows!"
+
     list_shows
     info_page
     close_app
@@ -20,6 +24,7 @@ class PopularTvShows::CLI
     puts ""
   end
 
+  ##Gets user input to pick a particular TV show
   def info_page
     input = nil
     while input != "exit"
@@ -36,6 +41,7 @@ class PopularTvShows::CLI
     end
   end
 
+  #Prints TV Show profile to CLI
   def print_show_profile(index)
     puts ""
     puts "-------------------------------------------"
