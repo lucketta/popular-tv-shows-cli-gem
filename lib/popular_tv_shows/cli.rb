@@ -26,7 +26,7 @@ class PopularTvShows::CLI
       puts "Enter the number of the TV show you would like info on (type 'list' to reprint list or 'exit' to exit):"
       input = gets.strip.downcase
 
-      if input > "0" && input < "50"
+      if input.to_i > 0 && input.to_i < 50
         print_show_profile(input.to_i - 1)
       elsif input == "list"
         list_shows
