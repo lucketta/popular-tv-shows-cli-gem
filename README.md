@@ -1,8 +1,6 @@
 # PopularTvShows
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/popular_tv_shows`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Popular TV Shows Cli Gem. This gem lists 49 Popular TV Shows, according to TV Guide. Choosing a show from the list allows you to get more information about the show: original airdate, rating, summary, main actors, and if the show is currently airing episodes. If so, the next air date and network are displayed.
 
 ## Installation
 
@@ -38,4 +36,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/lucket
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
