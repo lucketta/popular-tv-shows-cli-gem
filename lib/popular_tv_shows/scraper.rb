@@ -1,9 +1,5 @@
 class PopularTvShows::Scraper
 
-  def initialize
-    get_page
-  end
-
   def get_page
     Nokogiri::HTML(open('http://www.tvguide.com/tvshows/'))
   end
