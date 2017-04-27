@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
+#shebang
 
-require './lib/popular_tv_shows'
+require 'pry'
+require_relative '../lib/popular_tv_shows'
 
 PopularTvShows::CLI.new.call

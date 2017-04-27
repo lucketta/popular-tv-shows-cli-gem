@@ -31,8 +31,10 @@ class PopularTvShows::CLI
       puts "Enter the number of the TV show you would like info on (type 'list' to reprint list or 'exit' to exit):"
       input = gets.strip.downcase
 
-      if input.to_i > 0 && input.to_i < 50
-        print_show_profile(input.to_i - 1)
+      if input.to_i.between?(1,49)
+        show = PopularTvShows::TvShows.all[input.to_i - 1]
+        PopularTvShows::TvShows.tv_show_attributes(show)
+        print_show_profile(show)
       elsif input == "list"
         list_shows
       elsif input != "exit"
@@ -42,19 +44,19 @@ class PopularTvShows::CLI
   end
 
   #Prints TV Show profile to CLI
-  def print_show_profile(index)
+  def print_show_profile(show)
     puts ""
     puts "-------------------------------------------"
-    puts "| #{PopularTvShows::TvShows.all[index].name} |"
-    puts "| #{PopularTvShows::TvShows.all[index].premier_year} #{PopularTvShows::TvShows.all[index].rating} |"
-    puts "| #{PopularTvShows::TvShows.all[index].airing} |"
+    puts "| #{show.name} |"
+    puts "| #{show.premier_year} #{show.rating} |"
+    puts "| #{show.airing} |"
     puts ""
     puts "| Summary: "
-    puts "|    #{PopularTvShows::TvShows.all[index].summary}"
+    puts "|    #{show.summary}"
     puts ""
     puts "| Main Cast: "
 
-    PopularTvShows::TvShows.all[index].main_cast.each do |member|
+    show.main_cast.each do |member|
       puts "    #{member} "
     end
     puts "-------------------------------------------"

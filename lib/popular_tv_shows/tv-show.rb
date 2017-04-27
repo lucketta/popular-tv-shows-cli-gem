@@ -3,17 +3,17 @@ class PopularTvShows::TvShows
   @@all = []
 
   #Initializes each object with name, airing date, index, url
-  def initialize(tv_show)
-    @name = tv_show.css('h2.most-popular-item-title a').text
-    @airing = tv_show.css('span.most-popular-item-information').text.strip
-    @index = tv_show.css('span.most-popular-item-show-card-overlay-number').text.to_i
-    @tv_show_url = tv_show.css('h2.most-popular-item-title a').attribute('href').value
+  def initialize(name, airing, index, tv_show_url)
+    @name = name
+    @airing = airing
+    @index = index
+    @tv_show_url = tv_show_url
     @@all << self
   end
 
   #iterates over @@all and fills in attributes for each object
-  def self.tv_show_attributes
-    @@all.each do |show|
+  def self.tv_show_attributes(show)
+    #@@all.each do |show|
 
       ##TV Show specific profile page to get attributes
       tv_show_profile = Nokogiri::HTML(open(show.tv_show_url))
@@ -48,7 +48,7 @@ class PopularTvShows::TvShows
         cast_list << "#{member.text.split[0]} #{member.text.split[1]}"
       end
       show.main_cast = cast_list
-    end
+    #end
   end
 
   def self.all
